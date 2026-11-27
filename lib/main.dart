@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'core/theme/app_theme.dart';
-import 'features/authentication/ login/screens/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +9,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
-      home: const LoginPage(),
+      home: Scaffold(
+        body: SizedBox.expand(),
+      ),
     );
   }
 }
