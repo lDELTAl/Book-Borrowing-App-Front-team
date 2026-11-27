@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:book_borrowing_app_front_team/core/constants/app_colors.dart';
-import 'user_login_page.dart';
+import '../../../../ core/constants/app_colors.dart';
+import 'admin_login_page.dart';
 
-class AdminLoginPage extends StatefulWidget {
-  const AdminLoginPage({super.key});
+class UserLoginPage extends StatefulWidget {
+  const UserLoginPage({super.key});
 
   @override
-  State<AdminLoginPage> createState() => _AdminLoginPageState();
+  State<UserLoginPage> createState() => _UserLoginPageState();
 }
 
-class _AdminLoginPageState extends State<AdminLoginPage> {
+class _UserLoginPageState extends State<UserLoginPage> {
   final formKey = GlobalKey<FormState>();
 
   final phoneOrEmailController = TextEditingController();
@@ -53,7 +53,7 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                 const SizedBox(height: 18),
 
                 const Text(
-                  'Admin Login',
+                  'User Login',
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
@@ -73,22 +73,6 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                   child: Row(
                     children: [
                       Expanded(
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(30),
-                          onTap: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const UserLoginPage(),
-                              ),
-                            );
-                          },
-                          child: const Center(
-                            child: Text('User'),
-                          ),
-                        ),
-                      ),
-                      Expanded(
                         child: Container(
                           decoration: BoxDecoration(
                             color: AppColors.secondary,
@@ -96,9 +80,25 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                           ),
                           child: const Center(
                             child: Text(
-                              'Admin',
+                              'User',
                               style: TextStyle(color: Colors.white),
                             ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(30),
+                          onTap: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const AdminLoginPage(),
+                              ),
+                            );
+                          },
+                          child: const Center(
+                            child: Text('Admin'),
                           ),
                         ),
                       ),
