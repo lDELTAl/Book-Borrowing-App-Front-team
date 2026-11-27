@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../ core/constants/app_colors.dart';
-import '../register/screens/register_page.dart';
+import 'register_page.dart';
 import 'UserLoginPage.dart';
 
 class LoginPage extends StatelessWidget {
